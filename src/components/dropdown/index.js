@@ -587,6 +587,8 @@ export default class Dropdown extends PureComponent {
 
     let props = propsExtractor(item, index);
 
+    console.log({ ...props })
+
     let { style, disabled }
       = props
       = {
@@ -631,7 +633,7 @@ export default class Dropdown extends PureComponent {
     return (
       <DropdownItem index={index} {...props}>
         {renderItem ? renderItem({ value, label, index }) : (
-          <Text style={[styles.item, textStyle, itemTextStyle, item.props.itemTextStyle]} numberOfLines={1}>
+          <Text style={[styles.item, textStyle, itemTextStyle]} numberOfLines={1}>
             {title}
           </Text>
         )}
