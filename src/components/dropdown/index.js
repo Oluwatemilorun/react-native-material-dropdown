@@ -11,9 +11,9 @@ import {
   Platform,
   ViewPropTypes,
   I18nManager,
+  TextField
 } from 'react-native';
 import Ripple from 'react-native-material-ripple';
-import { TextField } from 'react-native-material-textfield';
 
 import DropdownItem from '../item';
 import styles from './styles';
@@ -512,8 +512,6 @@ export default class Dropdown extends PureComponent {
 
         value={title}
         editable={false}
-        onChangeText={undefined}
-        renderAccessory={renderAccessory}
       />
     );
   }
