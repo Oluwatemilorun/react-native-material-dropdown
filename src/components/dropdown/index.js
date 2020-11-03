@@ -587,8 +587,6 @@ export default class Dropdown extends PureComponent {
 
     let props = propsExtractor(item, index);
 
-    console.log({...item})
-
     let { style, disabled }
       = props
       = {
