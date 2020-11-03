@@ -145,6 +145,7 @@ export default class Dropdown extends PureComponent {
 
     renderBase: PropTypes.func,
     renderAccessory: PropTypes.func,
+    renderItem: PropTypes.func,
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
     overlayStyle: (ViewPropTypes || View.propTypes).style,
@@ -581,6 +582,7 @@ export default class Dropdown extends PureComponent {
       rippleOpacity,
       rippleDuration,
       shadeOpacity,
+      renderItem,
     } = this.props;
 
     let props = propsExtractor(item, index);
@@ -628,9 +630,11 @@ export default class Dropdown extends PureComponent {
 
     return (
       <DropdownItem index={index} {...props}>
-        <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={1}>
-          {title}
-        </Text>
+        {renderItem ? renderItem({ value, label, index }) : (
+          <Text style={[styles.item, textStyle, itemTextStyle]} numberOfLines={1}>
+            {title}
+          </Text>
+        )}
       </DropdownItem>
     );
   }

@@ -99,6 +99,8 @@ export interface DropDownProps extends TouchableWithoutFeedbackProps {
 
   /** Render base component */
   renderBase?(props: RenderBaseProps): JSX.Element;
+  /** Render dropdown item component */
+  renderItem?(props: RenderItemProps): JSX.Element;
   /** Render text field accessory */
   renderAccessory?(): JSX.Element;
 }
@@ -155,6 +157,15 @@ export interface DropDownInsets {
 export interface RenderBaseProps extends DropDownProps {
   /** Title of dropdown */
   title: string;
+}
+
+/**
+ * Render item function props
+ */
+export interface RenderItemProps {
+  label: DropDownData['label'];
+  value: DropDownData['value'];
+  index: number
 }
 
 /**
